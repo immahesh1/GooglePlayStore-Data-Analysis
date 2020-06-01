@@ -54,11 +54,11 @@ object GPlayAppAnalysis {
    
     println("App category having highest average rating")
     val highest = unsorted_res.sort(desc("Avg_Rating")).take(2)
-    println(highest)
+    println(highest(0))
     
     println("App category having lowest average rating")
     val lowest = unsorted_res.sort("Avg_Rating").take(1)
-    println(lowest)
+    println(lowest(0))
     
     spark.close()
     
