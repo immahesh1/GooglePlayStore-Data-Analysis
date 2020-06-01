@@ -1,4 +1,4 @@
-package com.test.spark
+package com.xuvantum.spark
 //Average app rating category wise
 //Which app category has highest and lowest rating
 
@@ -36,7 +36,8 @@ object GPlayAppAnalysis {
     
     //Now we will convert catNrat to dataset
     import spark.implicits._
-    val ds = catNrat.toDS().cache()
+    val dss = catNrat.toDS().cache()
+    val  ds = dss.filter(x => x.Rating !=19.0)
     ds.count()  //10841
     
     //Since this Dataset contains some NaN value, which will create problem while calculating average
